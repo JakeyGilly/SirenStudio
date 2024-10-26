@@ -9,7 +9,7 @@
 
     <ShellContent
         Title="Siren Studio"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        ContentTemplate="{DataTemplate local:MusicPlayerPage}"
+        Route="MusicPlayerPage" />
 
 </Shell>

@@ -61,6 +61,13 @@
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)"/>
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0"/>
         <PackageReference Include="NAudio" Version="2.2.1" />
+        <PackageReference Include="Plugin.Maui.Audio" Version="3.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <MauiXaml Update="MusicPlayerPage.xaml">
+        <SubType>Designer</SubType>
+      </MauiXaml>
     </ItemGroup>
 
 </Project>

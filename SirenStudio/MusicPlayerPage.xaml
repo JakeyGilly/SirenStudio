@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:SirenStudio.ViewModels"
+             x:Class="SirenStudio.MusicPlayerPage"
+             x:DataType="viewmodels:MusicPlayerPageViewModel">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0,30,30"
+            VerticalOptions="Center"
+            IsEnabled="{Binding HasAudioSource}">
+
+            <HorizontalStackLayout Spacing="5" HorizontalOptions="Center">
+                <Button
+                    x:Name="btnPlay"
+                    Text="Play"
+                    BackgroundColor="Green"
+                    Command="{Binding PlayCommand}"
+                    SemanticProperties.Hint="Start playing a sound" />
+
+                <Button
+                    x:Name="btnPause"
+                    Text="Pause"
+                    BackgroundColor="Blue"
+                    Command="{Binding PauseCommand}"
+                    SemanticProperties.Hint="Pause playing the sound" />
+
+                <Button
+                    x:Name="btnStop"
+                    Text="Stop"
+                    BackgroundColor="Red"
+                    Command="{Binding StopCommand}"
+                    SemanticProperties.Hint="Stop playing the sound" />
+            </HorizontalStackLayout>
+		</VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

@@ -7,7 +7,8 @@ namespace SirenStudio;
 public partial class MainPage
 {
     private string m_project_name = string.Empty;
-    private string m_project_path = string.Empty; 
+    private string m_project_path = string.Empty;
+    private string m_full_path = string.Empty;
     
     private static readonly FilePickerFileType s_custom_file_type = new FilePickerFileType(
         new Dictionary<DevicePlatform, IEnumerable<string>>
@@ -47,10 +48,10 @@ public partial class MainPage
 
     private void CheckFullPath()
     {
-        if (m_project_name != string.Empty && m_project_path != string.Empty)
-        {
-            PathLabel.Text = $"Project will be created in: {m_project_path}\\{m_project_name}";
-        }
+        if (m_project_name == string.Empty || m_project_path == string.Empty) return;
+        
+        PathLabel.Text = $"Project will be created in: {m_project_path}\\{m_project_name}.srn";
+        m_full_path = PathLabel.Text;
     }
 
     private void OnNameTextChanged(object sender, TextChangedEventArgs e)
@@ -79,6 +80,7 @@ public partial class MainPage
 
     private void CreateFolder(object? sender, EventArgs e)
     {
-        // Create folder with file
+        // TODO: Doesn't work
+        File.Create(m_full_path);
     }
 }

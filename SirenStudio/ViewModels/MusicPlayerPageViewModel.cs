@@ -7,6 +7,7 @@ public class MusicPlayerPageViewModel : BaseViewModel, IQueryAttributable, IDisp
 	readonly IAudioManager audioManager;
 	readonly IDispatcher dispatcher;
 	IAudioPlayer? audioPlayer;
+	TimeSpan animationProgress;
 	// MusicItemViewModel musicItemViewModel;
 	bool isDisposed;
 

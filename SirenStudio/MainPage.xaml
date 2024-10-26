@@ -2,42 +2,52 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SirenStudio.MainPage">
-
+    
     <ScrollView>
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
             <Image
-                Source="dotnet_bot.png"
-                HeightRequest="185"
+                Source="logo.png"
+                HeightRequest="100"
                 Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot in a race car number eight" />
-
+                
+                SemanticProperties.Description="Logo for DAW" />
             <Label
-                Text="Hello, World!"
+                Text="Create or Open a project"
                 Style="{StaticResource Headline}"
                 SemanticProperties.HeadingLevel="Level1" />
-
-            <Label
-                Text="Welcome to &#10;.NET Multi-platform App UI"
-                Style="{StaticResource SubHeadline}"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
-
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me" 
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Fill" />
             
             <Button 
-                x:Name="OtherButton"
-                Text="Press this for music"
+                x:Name="OpenExplorer"
+                Text="Open a project"
                 SemanticProperties.Hint="Music will happen"
-                Clicked="OnMusicClicked"
+                Clicked="OpenExplorerWindow"
                 HorizontalOptions="Center"
+            />
+            
+            <Label Text="Enter Project name" />
+            <Entry x:Name="Name"
+                   MaxLength="10"
+                   Placeholder="Enter a name"
+                   TextChanged="OnNameTextChanged"
+                   Completed="OnNameTextCompleted" />
+            
+            <Label Text="Enter Project path" />
+            <Entry x:Name="Path"
+                   Placeholder="Enter a path"
+                   TextChanged="OnPathTextChanged"
+                   Completed="OnPathCompleted" />
+            <Label
+                x:Name="PathLabel"
+                Text=""
                 />
+            <Button 
+                x:Name="CreateProject"
+                Text="Create Project"
+                Clicked="CreateFolder"/>
+
+            
         </VerticalStackLayout>
     </ScrollView>
 

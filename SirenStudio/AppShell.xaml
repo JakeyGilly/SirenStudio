@@ -8,7 +8,7 @@
     Title="SirenStudio">
 
     <ShellContent
-        Title="Home"
+        Title="Siren Studio"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 

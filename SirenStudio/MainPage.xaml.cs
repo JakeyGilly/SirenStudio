@@ -2,7 +2,8 @@
 
 public partial class MainPage : ContentPage
 {
-    int count = 0;
+    private int count;
+    private bool m_pressed = true;
 
     public MainPage()
     {
@@ -13,5 +14,19 @@ public partial class MainPage : ContentPage
     {
         count++;
         CounterBtn.Text = $"Clicked {count} time" + (count == 1 ? "" : "s");
+    }
+
+    private void OnMusicClicked(object sender, EventArgs e)
+    {
+        if (m_pressed)
+        {
+            OtherButton.Text = $"I lied";
+            m_pressed = false;
+        }
+        else
+        {
+            OtherButton.Text = $"Press for even more music";
+            m_pressed = true;
+        }
     }
 }
